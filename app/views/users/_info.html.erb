@@ -1,7 +1,8 @@
 <table class="table user">
+  <h2>User info</h2>
   <thead>
     <tr>
-      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+      <%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %>
     </tr>
   </thead>
   <tbody>
@@ -19,3 +20,4 @@
       </th>
     </tr>
   </tbody>
+</table>
