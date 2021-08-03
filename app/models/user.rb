@@ -16,4 +16,15 @@ class User < ApplicationRecord
 
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followed, through: :relationships, source: :followed
+
+
+  def follow(user_id)
+    ralationships.create(followed_id: user_id)
+  end
+  def unfollow(user_id)
+    relationships.find_by(followed_id: user_id)
+  end
+  def following?(user)
+    following.include?(user)
+  end
 end
